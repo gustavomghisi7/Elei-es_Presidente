@@ -10,16 +10,16 @@ json_dados = json.loads(dados.content)
 
 candidato = []
 partido = []
-porcetagem = []
+porcentagem = []
 votos = []
 
 for inf in json_dados['cand']:
 
     if inf['seq'] == '1' or inf['seq'] == '2' or inf['seq'] == '3' or inf['seq'] == '4' or inf['seq'] == '5' :
-        candidato.append(inf['nm']), partido.append(inf['n']), porcetagem.append(inf['pvap']), votos.append(inf['vap'])
+        candidato.append(inf['nm']), partido.append(inf['n']), porcentagem.append(inf['pvap']), votos.append(inf['vap'])
 
-pres_eleicao = pd.DataFrame(list(zip(candidato, partido, porcetagem, votos)), columns = [
-    'Candidato', 'Partido', 'Porcetagem', 'Num de Votos'
+pres_eleicao = pd.DataFrame(list(zip(candidato, partido, porcentagem, votos)), columns = [
+    'Candidato', 'Partido', 'Porcentagem', 'Num de Votos'
 ])
 
 print(pres_eleicao)
